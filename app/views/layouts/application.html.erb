@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Zooked" %></title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag :defaults %>
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+  <body style=background-image:url("smoke.jpg");>
+  	<id="bg">
+    <div class="navbar  navbar-inverse">
+    <div class="navbar-inner pull-center">
+    <ul class="nav">
+        <li class="active"><a href="/">Home</a></li>
+    </ul>
+    </div>
+    </div>
+            <%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar-inner">
+    <ul class="nav">
+    <li class="active"><a href="/about_us">About Us</a></li>
+    <li><a href="/help">Help</a></li>
+    <li><a href="/contact">Contact</a></li>
+    </ul>
+    </div>
+    </div>
+      <footer>
+
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>
