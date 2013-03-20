@@ -38,3 +38,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
+group :production do
+  gem 'therubyracer'
+end

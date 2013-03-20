@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Zooked" %></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -16,22 +17,31 @@
   </head>
   <body>
       <div class="container">
-  <div class="hero-unit">
+ <div class="hero-unit">
+        <h1 style="text-align:center;margin-bottom:40px;margin-top:5px;">
+          <% if flash[:notice] %>
+      <%= flash[:notice] %></p></h1>
+    <% end %>
+    <% if flash[:error] %>
+      <%= flash[:error] %></p>
+      <% end %>
+
     <h1 style="text-align:center;margin-bottom:40px;margin-top:5px;">
-      <img src="whitepic.jpg"></h1>
+      <img src="/assets/whitepic.jpg"></h1>
 
-<p>Zooked is a social media platform that allows users to share any kind of media whether it be videos,pictures or text</p>
+<p>Zooked is a social media platform that allows users to share any kind of media whether it be videos, pictures or text</p>
 
-<p>Our users will interact with other stoners to create a network where our pleasure of smoking isn't taboo</p>
+<p>Our vision is to create a network where our pleasure of smoking isn't taboo</p>
 
-<p>But we aren't done as you can see so if you want a heads up, just type in your email and we will let you know when we are good to go</p>
+<p>But we aren't done as you can see so if you want a heads up when we are, just type in your email and we will let you know when we are all ready to go</p>
 
-
-
-  <%= form_for User.new do |f| %>
+<%= form_for User.new do |f| %>
   <%= f.text_field :email %><br />
-  <%= f.submit "Click Me" %>
-  <% end %>
+
+  <%= f.submit 'Save My Email!' %>
+<% end %>
 </div>
 </div>
+
+
 </body>

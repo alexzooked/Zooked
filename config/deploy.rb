@@ -2,7 +2,7 @@ require 'capistrano'
 require 'capistrano-vexxhost'
 require 'bundler/capistrano'
 
-
+set :normalize_asset_timestamps, false
 set :domain, 'zooked.com'
 # ...
 role :app, domain

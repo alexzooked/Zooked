@@ -44,10 +44,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to "/", :flash => { :success => "Message" } }
+        format.html { redirect_to "/", :notice => "Your email is now saved. Expect an email soon!"}
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to "/", :notice=> "You fucked up. It's simple..you@email.com" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
